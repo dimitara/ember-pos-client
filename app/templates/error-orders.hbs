@@ -1,0 +1,20 @@
+<div class="orders-box">
+    <h3>Има неизпратени поръчки:</h3>
+    <ul>
+        {{#each item in items}}
+        <li>
+            <span>{{item.product.name}}</span> x <span>{{item.quantity}}</span> от <span>{{item.order.openedBy.name}}</span> за маса: <span>{{item.order.table.nickname}}</span>
+        </li>
+        {{/each}}
+    </ul>
+
+    <ul class="button-list">
+        <li>
+            <button {{action "sendOrderItems"}}>Изпрати към кухня</button>
+        </li>
+        <li>
+            <button {{action "lock"}}>Изтрий и продължи</button>
+        </li>
+    </ul>
+</div>
+

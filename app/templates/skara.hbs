@@ -1,0 +1,16 @@
+<div class="kitchen">
+    <h3>Скара</h3>
+    <ul>
+        {{#each orderitem in orderItems}}
+        <li {{action "itemCooked" orderitem}}>
+           <h5>
+            <em>{{orderitem.quantity}}</em> x {{orderitem.product.name}}    
+           </h5>
+           <span class="comment">{{orderitem.comment}}</span>
+           <span class="table">{{orderitem.order.table.nickname}}</span>
+
+           <span>преди: <em>{{orderitem.minutes}}</em> мин. от <em>{{orderitem.order.operatedBy.name}}</em></span>
+        </li>
+        {{/each}}
+    </ul>
+</div>

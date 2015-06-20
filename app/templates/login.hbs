@@ -1,0 +1,6 @@
+<div class="login-box">
+	<form {{action "login" on="submit"}} class="{{if error "error"}}">
+		{{input value=pin maxlength=4 placeholder="въведи пин"}}
+		<button>вход</button>
+	</form>
+</div>

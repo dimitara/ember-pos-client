@@ -1,0 +1,12 @@
+<div class="tables {{if visible 'visible'}}">
+	<h3>Избери Маса</h3>
+	<ul>
+		{{#each table in tables}}
+			<li>
+				<button class="{{if table.taken "taken"}} {{unless table.mine "notmine"}}" {{action 'selectTable' table}}>
+					{{table.nickname}}
+				</button>
+			</li>
+		{{/each}}
+	</ul>
+</div>

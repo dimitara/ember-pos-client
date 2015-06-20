@@ -1,0 +1,26 @@
+<div class="pos-container">
+	<div class="main-menu">
+		<ul>
+			<li>
+				<button class="{{if tablesVisible "selected"}}" {{action 'toggleTables'}}><em class="icon-food"></em>маси</button>
+			</li>
+			<li>
+				<button class="{{if reportsVisible "selected"}}" {{action 'toggleReports'}}><em class="icon-note"></em>отчети</button>
+			</li>
+			<li>
+				<button {{action 'lock'}}><em class="icon-lock"></em>заключи</button>
+			</li>
+		</ul>
+	</div>
+	<div class="content">
+		<span class="user">{{user.name}}</span>
+		{{pos-categories selectCategory="selectCategory"}}
+		{{pos-search filterProducts="filterProducts"}}
+		{{pos-tables visible=tablesVisible selectTable="selectTable" user=user}}
+	
+		{{pos-products products=model selectedCategory=selectedCategory selectProduct="selectProduct" keyword=keyword}}
+		{{pos-order table=selectedTable order=currentOrder removeItem="removeItem" sendOrder="sendOrder" closeOrder="closeOrder" refresh="refresh"}}
+
+		{{pos-reports visible=reportsVisible user=user}}
+	</div>
+</div>

@@ -1,0 +1,12 @@
+<div class="tables {{if visible 'visible'}} reports">
+    <h3>Отчети</h3>
+    <button {{action "printDailyReport"}} class="print">Приключи деня и принтирай отчет</button>
+    <ul>
+        {{#each report in reports}}
+            {{#if report}}
+            <li><a target="_blank" href="{{report.link}}"><em class="icon-file-excel"></em> Отчет от {{report.date}}</a></li>
+            {{/if}}
+        {{/each}}
+    </ul>
+</div>
+

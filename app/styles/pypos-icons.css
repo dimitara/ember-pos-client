@@ -1,0 +1,47 @@
+/*
+  Icon Font: pypos-icons
+*/
+
+@font-face {
+  font-family: "pypos-icons";
+  src: url("./pypos-icons.eot");
+  src: url("./pypos-icons.eot?#iefix") format("embedded-opentype"),
+       url("./pypos-icons.woff") format("woff"),
+       url("./pypos-icons.ttf") format("truetype"),
+       url("./pypos-icons.svg#pypos-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "pypos-icons";
+    src: url("./pypos-icons.svg#pypos-icons") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-file-excel:before,
+.icon-food:before,
+.icon-lock:before,
+.icon-note:before {
+  display: inline-block;
+  font-family: "pypos-icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon-file-excel:before { content: "\f100"; }
+.icon-food:before { content: "\f101"; }
+.icon-lock:before { content: "\f102"; }
+.icon-note:before { content: "\f103"; }

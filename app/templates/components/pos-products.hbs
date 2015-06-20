@@ -1,0 +1,17 @@
+<div>
+	{{#if filteredProducts.length}}
+	<ul>
+		{{#each product in filteredProducts}}
+			<li>
+				<button {{action 'selectProduct' product}}>
+					<span>{{product.name}}</span>
+					<em>{{product.price}} лв.</em>
+				</button>
+			</li>
+		{{/each}}
+	</ul>
+	{{else}}
+		<span class="error">няма намерени продукти по търсените критерии</span>
+	{{/if}}
+
+</div>

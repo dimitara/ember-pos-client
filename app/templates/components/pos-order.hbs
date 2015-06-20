@@ -1,0 +1,45 @@
+<div>
+	<h3>Текуща поръчка за {{order.table.nickname}}</h3>
+	<div class="order-scroll">
+		<ul class="items">
+		{{#each item in items}}
+			<li class="{{unless item.sent "notsent"}} {{if item.comment "comment"}}" title="{{if item.comment item.comment}}">
+				<span {{action 'showComment' item}}>{{item.product.name}}</span> <em {{action 'reduce' item}} alt="кликни върху цената да намалиш бройката">{{item.quantity}}x{{item.product.price}} лв.</em>
+			</li>
+		{{/each}}
+		</ul>
+	</div>
+
+	<div class="order-actions">
+		<div>
+			Общо: {{total}} лв.
+		</div>
+
+		<ul>
+			<li>
+				<button class="send" {{action 'send'}}>Изпрати</button>
+			</li>
+			<li>
+				<button class="{{if hasUnsentItems "disabled"}} close" {{action 'closeConfirm'}}>Приключи</button>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="{{if commentsVisible "visible"}} overlay">
+	<div class="box">
+		<form {{action "sendComment" on="submit"}}>
+			{{input value=comment placeholder="коментар?" autofocus="autofocus"}}
+			<button>коментирай</button>
+		</form>
+		<button class="text" {{action "closeComment"}}>затвори</button>
+	</div>
+</div>
+
+<div class="{{if finishOrderVisible "visible"}} overlay close-order">
+	<div class="box">
+		<h5>{{total}} лв.</h5>
+		<button {{action "close"}}>приключи</button>
+
+		<button class="text" {{action "closeFinishOrder"}}>затвори</button>
+	</div>
+</div>
